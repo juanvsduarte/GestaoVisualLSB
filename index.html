@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+   	<head>
+      	<meta http-equiv="refresh" content="500" />
+      	<meta name="viewport" content="width=device-width, initial-scale=1">
+      	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+      	<title>LSB Gestão de Visuais</title>
+      	<link rel="shortcut icon" HREF="https://lean-scheduling.com.br/assets/site/favicons/favicon-32x32.png"> 
+      	<style>
+	        * {
+	            box-sizing: border-box;
+	        }
+	        body {
+            	font-family: Verdana, sans-serif;
+            	height: 100%;
+            	overflow:hidden;
+            	background-color: #ffffff;
+	        }
+	        .mySlides {
+	            display: none;
+	        }
+	        iframe {
+	            vertical-align: center;
+	            width: 100%;
+	            height: 100vh;
+	        }
+	        .slideshow-container {  
+	            max-width: 1000%;
+	            width: 100%;
+	            height: 100%;
+	            position: relative;
+	            margin: auto;
+	            margin-top: -12px;
+	        }
+	        .text {  
+	            color: #f2f2f2;
+	            font-size: 15px;
+	            padding: 8px 12px;
+	            position: absolute;
+	            bottom: 8px;
+	            height: 100%; 
+	            width: 100%;
+	            text-align: center;
+	        }
+	        .numbertext {
+	            color: #f2f2f2; 
+	            font-size: 12px; 
+	            padding: 8px 12px; 
+	            position: absolute; 
+	            top: 0;
+	        }
+	        .dot { 
+	            height: 15px; 
+	            width: 15px; 
+	            margin: 0 2px; 
+	            background-color: #bbb; 
+	            border-radius: 50%; 
+	            display: inline-block; 
+	            transition: background-color 0.6s ease;
+	        }
+	        .active {  
+	            background-color: #717171; 
+	            height: 100%;
+	        }
+
+
+	        .fade { 
+	            -webkit-animation-name: fade; 
+	            -webkit-animation-duration: 1s; 
+	            animation-name: fade; 
+	            animation-duration: 1s;
+	        }
+	        @-webkit-keyframes fade {  
+	            from {
+	               opacity: .4;
+	            } 
+	            to {
+	               opacity: 1;
+	            }
+	        }
+	        @keyframes fade { 
+	            from {
+	               opacity: .4;
+	            } 
+	            to {
+	               opacity: 1;
+	            }
+	        }
+
+	        @media only screen and (max-width: 100%) {
+	            .text {
+	               font-size: 11px;
+	            }
+	        }
+	        .ajuste{ 
+	            margin-top:-5;
+	            margin-left:-8px;
+	            width: 101% !important;
+	            height: 109vh !important;
+	        }
+      	</style>
+   	</head>
+	<body>
+		<!-- Adicionando o ID "content" aqui -->
+		<div class="slideshow-container ajuste" id="content">
+   			<iframe class="mySlides nenhum ajuste" src="https://app.powerbi.com/view?r=eyJrIjoiNWYxMTUzNjgtMzQ2MS00M2U2LWE0NDEtMzQ2MmVjM2UyNTllIiwidCI6IjFkZjhjMTM4LTdmMzYtNDNiNS04Y2RiLTdhODNhODdjMWQwZCJ9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
+   			<iframe class="mySlides nenhum ajuste" src="https://app.powerbi.com/view?r=eyJrIjoiNWYxMTUzNjgtMzQ2MS00M2U2LWE0NDEtMzQ2MmVjM2UyNTllIiwidCI6IjFkZjhjMTM4LTdmMzYtNDNiNS04Y2RiLTdhODNhODdjMWQwZCJ9&pageName=ReportSectionce203e396bdbe1086b89" frameborder="0" allowFullScreen="true"></iframe>
+   			<iframe class="mySlides nenhum ajuste" src="https://app.powerbi.com/view?r=eyJrIjoiNWYxMTUzNjgtMzQ2MS00M2U2LWE0NDEtMzQ2MmVjM2UyNTllIiwidCI6IjFkZjhjMTM4LTdmMzYtNDNiNS04Y2RiLTdhODNhODdjMWQwZCJ9&pageName=ReportSection4e6a6653fc8a9f96aeaa" frameborder="0" allowFullScreen="true"></iframe>
+   			<iframe class="mySlides nenhum ajuste" src="https://app.powerbi.com/view?r=eyJrIjoiNWYxMTUzNjgtMzQ2MS00M2U2LWE0NDEtMzQ2MmVjM2UyNTllIiwidCI6IjFkZjhjMTM4LTdmMzYtNDNiNS04Y2RiLTdhODNhODdjMWQwZCJ9&pageName=ReportSection372c5ac9d6e7627529d3" frameborder="0" allowFullScreen="true"></iframe>
+   			<iframe class="mySlides nenhum ajuste" src="https://app.powerbi.com/view?r=eyJrIjoiNWYxMTUzNjgtMzQ2MS00M2U2LWE0NDEtMzQ2MmVjM2UyNTllIiwidCI6IjFkZjhjMTM4LTdmMzYtNDNiNS04Y2RiLTdhODNhODdjMWQwZCJ9&pageName=ReportSectionededb52d177ccde19ed2" frameborder="0" allowFullScreen="true"></iframe>
+		</div>
+
+		<div id="denied" style="display: none; text-align: center;">
+		    <h1>Acesso negado</h1>
+		    <p>Seu IP não tem permissão para acessar este conteúdo.</p>
+		</div>
+
+	    <script>
+	        // Verificação de IP
+	        var allowedIP = '189.4.121.33';
+	        
+	        fetch('https://ipinfo.io/json')
+	            .then(response => response.json())
+	            .then(data => {
+	                var userIP = data.ip;
+	                if (userIP === allowedIP) {
+	                    document.getElementById("content").style.display = "block";
+	                } else {
+	                    document.getElementById("denied").style.display = "block";
+	                    document.getElementById("content").style.display = "none"; // Escondendo o conteúdo se o IP for negado
+	                }
+	            })
+	            .catch(error => {
+	                console.log('Erro ao obter o IP:', error);
+	                document.getElementById("denied").style.display = "block";
+	                document.getElementById("content").style.display = "none";
+	            });
+
+	        var slideIndex = 0;	        
+
+	        showSlides();
+
+	        function showSlides() {    
+	            var i;    
+	            var slides = document.getElementsByClassName("mySlides"); 
+
+	            for (i = 0; i < slides.length; i++) {
+	               slides[i].style.display = "none";    
+	            }    
+
+	            if (slideIndex >= slides.length) {
+	               slideIndex = 0;
+	            }    
+
+	            slides[slideIndex].style.display = "block";
+
+	            setTimeout(showSlides, 30000);
+	            slideIndex++; 
+	        }
+        </script>
+    </body>
+</html>
