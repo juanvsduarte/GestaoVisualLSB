@@ -117,24 +117,24 @@
 
 	    <script>
 	        // Verificação de IP
-	        var allowedIP = '189.4.121.33';
+	       // var allowedIP = '189.4.121.33';
 	        
-	        fetch('https://ipinfo.io/json')
-	            .then(response => response.json())
-	            .then(data => {
-	                var userIP = data.ip;
-	                if (userIP === allowedIP) {
-	                    document.getElementById("content").style.display = "block";
-	                } else {
-	                    document.getElementById("denied").style.display = "block";
-	                    document.getElementById("content").style.display = "none"; // Escondendo o conteúdo se o IP for negado
-	                }
-	            })
-	            .catch(error => {
-	                console.log('Erro ao obter o IP:', error);
-	                document.getElementById("denied").style.display = "block";
-	                document.getElementById("content").style.display = "none";
-	            });
+	       // fetch('https://ipinfo.io/json')
+	       //     .then(response => response.json())
+	        //    .then(data => {
+	        //        var userIP = data.ip;
+	        //        if (userIP === allowedIP) {
+	       //             document.getElementById("content").style.display = "block";
+	        //        } else {
+	        //            document.getElementById("denied").style.display = "block";
+	        //            document.getElementById("content").style.display = "none"; // Escondendo o conteúdo se o IP for negado
+	        //        }
+	        //    })
+	         //   .catch(error => {
+	        //        console.log('Erro ao obter o IP:', error);
+	         //       document.getElementById("denied").style.display = "block";
+	         //       document.getElementById("content").style.display = "none";
+	        //    });
 
 	        var slideIndex = 0;	        
 
